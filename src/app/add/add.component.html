@@ -1,0 +1,21 @@
+<!-- <div *ngFor="let item of test;let i = index">
+  <b>MODE:{{item.mode}}</b>
+  <input type="checkbox" [(ngModel)]="test[i].mode" />
+  <div>DIV(one way binding): {{item.value}} </div>
+  <div *ngIf="item.mode==false" ><input type="text" [(ngModel)]="test[i].value" /></div>
+</div> -->
+<div class="row form-group">
+  <div class="col-sm-5">
+    <label>Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="name">
+  </div>
+  <div class="col-sm-5">
+    <label>Gender</label>
+    <input type="text" class="form-control" [(ngModel)]="gender">
+  </div>
+  <div class="col-sm-2">
+    <br>
+    <button class="btn btn-primary mt-2" (click)="add()">ADD</button>
+  </div>
+</div>
+<app-edit [items]="items"></app-edit>

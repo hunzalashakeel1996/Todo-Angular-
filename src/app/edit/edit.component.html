@@ -1,0 +1,24 @@
+<div class="row list-group">
+    <div class=" list-group-item" *ngFor="let item of items; let i = index">
+      <div class="col-sm-5 float-left"><div *ngIf="item.btnmode == 'edit'; else namemode"><input [(ngModel)]="items[i].name" autofocus/></div>
+      <ng-template #namemode><label>{{items[i].name}}</label></ng-template></div>
+      <div class="col-sm-5 float-left"><div *ngIf="item.btnmode == 'edit'; else gendermode"><input [(ngModel)]="items[i].gender"/></div>
+      <ng-template #gendermode><label>{{items[i].gender}}</label></ng-template></div>
+      <div class="col-sm-2 float-left">
+        <button id="editbtn" class="btn btn-sm btn-primary" [hidden]='edithide' (click)="edit(i, $event)">Edit</button>
+        <button class="btn btn-sm btn-primary" [hidden]='updatehide' (click)='update(i, $event)'>Update</button>
+        <button class="btn btn-sm btn-primary" (click)='delete(i)'>Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <table class="table table-secondary table-hover" >
+      <tr *ngFor="let item of items" >
+        <td>{{item.name}}</td>
+        <td>{{item.gender}}</td>
+        <td>
+          <button class="btn btn-sm btn-primary">Edit</button>
+          <button class="btn btn-sm btn-primary">Delete</button>
+      </td>
+    </tr>
+  </table> -->
